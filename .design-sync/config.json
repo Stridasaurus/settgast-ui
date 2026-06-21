@@ -1,0 +1,19 @@
+{
+  "projectId": "bcb58db0-b5d3-4fc2-ab2a-9f46b5e1dcef",
+  "shape": "storybook",
+  "pkg": "@settgast/ui",
+  "storybookConfigDir": "packages/ui/.storybook",
+  "storybookStatic": ".design-sync/sb-reference",
+  "cssEntry": "dist/index.css",
+  "buildCmd": "pnpm -F \"@settgast/ui...\" build",
+  "readmeHeader": ".design-sync/conventions.md",
+  "runtimeFontPrefixes": ["Inter", "JetBrains Mono", "Fira Code"],
+  "titleMap": {
+    "Typography": null
+  },
+  "overrides": {
+    "Tabs": { "cardMode": "single", "primaryStory": "Default" },
+    "Modal": { "cardMode": "single", "primaryStory": "Default" },
+    "Input": { "cardMode": "column" }
+  }
+}
