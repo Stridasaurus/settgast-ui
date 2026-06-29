@@ -1,5 +1,5 @@
 import { defineConfig } from 'tsup';
-import { readFileSync, writeFileSync } from 'fs';
+import { readFileSync, writeFileSync, copyFileSync } from 'fs';
 
 export default defineConfig({
   entry: ['src/index.ts'],
@@ -73,5 +73,8 @@ export default defineConfig({
     // Step 4: prepend design tokens
     const tokens = readFileSync('src/tokens/tokens.css', 'utf8');
     writeFileSync('dist/index.css', tokens + '\n' + patchedCss);
+
+    // Step 5: emit standalone tokens file for consumers that only need the custom properties
+    copyFileSync('src/tokens/tokens.css', 'dist/tokens.css');
   },
 });
